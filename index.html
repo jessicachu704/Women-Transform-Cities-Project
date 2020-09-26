@@ -138,8 +138,12 @@
   </section><!-- End Hero -->
 
   <main id="main">
+    <div id="firebaseui-auth-container"></div>
+    <button type="button" onclick ="user()" >User login</button>
+    <button type="button" onclick ="admin()" >Admin login</button>
 
-    <!-- ======= About Section ======= -->
+
+    <!-- ======= About Section     <button type="button" onclick ="admin()" >admin login</button> ======= -->
     <section id="about" class="about">
       <div class="container" data-aos="fade-up">
 
@@ -469,13 +473,18 @@
   <script src="assets/js/main.js"></script>
 
   <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="/__/firebase/7.21.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-firestore.js"></script>
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+  <script src="./firebase.js"> </script>
+  <script src="./login.js"></script>
 
 <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
 
 <!-- Initialize Firebase -->
-<script src="/__/firebase/init.js"></script>
+
 
 </body>
 
