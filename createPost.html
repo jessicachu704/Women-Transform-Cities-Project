@@ -72,8 +72,6 @@
         </ul>
       </nav><!-- .nav-menu -->
 
-      <a href="#about" class="get-started-btn">Get Started</a>
-
     </div>
   </header><!-- End Header -->
 
@@ -98,13 +96,13 @@
 
           <div class="col-lg-6">
             <form action="">
-                <label for="category">Choose a category to post:</label>
+                <label for="category">Choose a category for your post:</label>
 
             <select name="categories" id="category">
-             <option value="cate1">cate1</option>
-             <option value="cate2">cate2</option>
-             <option value="cate3">cate3</option>
-             <option value="cate4">cate4</option>
+             <option value="health">Health</option>
+             <option value="career">Career</option>
+             <option value="finace">Finance</option>
+             <option value="education">Education</option>
             </select>
 
                 <!-- <form> -->
@@ -151,23 +149,29 @@
 
 
   <script>
+  
     function createPost() {
-    var subject1 = document.getElementById("subject").value;
-    var msg1 = document.getElementById("message").value;
+      var subject1 = document.getElementById("subject").value;
+      var msg1 = document.getElementById("message").value;
+      var user = firebase.auth().currentUser;
+      var cat = document.getElementById("category").value;
 
         console.log(subject1);
         console.log(msg1);
 
           db.collection("postings").doc(subject1).set({
-               title: msg1,
-              description: subject1,
+              title: subject1,
+              description: msg1,
               likes: 0,
-              category: "category",
-              dateposted: new Date()
+              category: cat,
+              dateposted: new Date(),
+              userid: user.uid
 
           }, {
               merge: true
-          });
+          }).then(function(){
+  window.location.replace("post_success.html");
+});
     }
   </script>
 
