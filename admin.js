@@ -30,11 +30,15 @@ $(document).ready(function () {
               let title= doc.data().title;
               let description = doc.data().description;
               let category = doc.data().category;
-              let dateposted= doc.data().dateposted;
+              let dateposted= doc.data().dateposted.toDate();
               let likes= doc.data().likes;
               let userid= doc.data().userid;
-              console.log(category , title, description);
-              createPost(title, description, category, dateposted, likes);
+
+
+
+        //      console.log(category , title, description);
+            let docid = doc.id;
+              createPost(title, description, category, dateposted, likes, userid, docid);
 
               
 
@@ -47,15 +51,17 @@ $(document).ready(function () {
   })
   
 }
-  function createPost(title, description, category, dateposted, likes) {
+  function createPost(title, description, category, dateposted, likes, userid, docid ) {
     let box = document.getElementById("thoughts");
+    let sect = document.createElement("div");
     let col = document.createElement("div");
     let colBox = document.createElement("div");
-    let heading1 =  document.createElement("h4");
-    let heading2 = document.createElement("h4");
+    let cate =  document.createElement("p");
+    let head = document.createElement("h4");
     let paragraph = document.createElement("p");
-    let like = document.createElement("p");
+    let like = document.createElement("button");
     let date = document.createElement("p");
+    let br = document.createElement("br");
     let button = document.createElement("button");
 
     col.setAttribute("class","col-lg-4 col-md-6 d-flex align-items-stretch");
@@ -63,19 +69,47 @@ $(document).ready(function () {
     col.setAttribute("data-aos-delay","100");
     button.setAttribute("type", "button");
     colBox.setAttribute("class", "icon-box");
-    heading1.innerHTML = title;
+    sect.setAttribute("class","section-title");
+    button.setAttribute("class", "get-started-btn");
+    like.setAttribute("class", "get-started-btn");
+//like button
+    like.addEventListener('click', function () {
+        console.log("I LIKE!"); // need to increment like on db.collection
+  })
+//delete button
+    button.addEventListener('click', function () {
+      console.log("Hi! doc id: " + docid);
+      db.collection("postings").doc(docid).delete().then(function() {
+        console.log("Document successfully deleted!");
+        location.reload();
+    }).catch(function(error) {
+        console.error("Error removing document: ", error);
+    });
+  })
+
+    cate.innerHTML = category;
     paragraph.innerHTML = description;
-    heading2.innerHTML = category;
-    like.innerHTML = likes + " likes";
+    head.innerHTML = title;
+    like.innerHTML = likes + " ❤";
     button.innerHTML = "Delete"
-    date.innerHTML = dateposted.toDate();
-    colBox.appendChild(heading1);
-    colBox.appendChild(heading2);
+    date.innerHTML = "Last updated: " + dateposted.toLocaleString();
+    sect.appendChild(cate);
+    colBox.appendChild(sect);
+    colBox.appendChild(head);
     colBox.appendChild(paragraph);
+    colBox.appendChild(br);
     colBox.appendChild(like);
-    colBox.appendChild(date);
     colBox.appendChild(button);
+    colBox.appendChild(date);
     col.appendChild(colBox);
+
     box.appendChild(col);
+
+  }
+
+  function del(){
+
+
+
 
   }
