@@ -17,31 +17,62 @@ $(document).ready(function () {
         });
     });
   };
+   var cat = ["all", "health", "career", "finance", "education"];
+  function getCatePosts(d){
+    console.log("Cate: " + cat[d] )
+    firebase.auth().onAuthStateChanged(function (user) {
+      db.collection("postings")
+      .get()
+      .then(function(querySnapshot) {
+        let box = document.getElementById("thoughts");
+        box.innerHTML = "";
+          querySnapshot.forEach(function(doc) {             
+            let title= doc.data().title;
+            let description = doc.data().description;
+            let category = doc.data().category;
+            let dateposted= doc.data().dateposted.toDate();
+            let likes= doc.data().likes;
+            let userid= doc.data().userid;
+            let docid = doc.id;
+            
+            if(d == 0){
+              createPost(title, description, category, dateposted, likes, userid, docid);
+            }
+            else{
+            if((strcmp(cat[d], category)) == 0 ){
+              createPost(title, description, category, dateposted, likes, userid, docid);
+            }
+          }
+            
+          });
+      })
+      .catch(function(error) {
+          console.log("Error getting documents: ", error);
+      });
   
+  })
+
+  function strcmp(a, b)
+  {   
+      return (a<b?-1:(a>b?1:0));  
+  }
+  
+  }
   function getPosts() {
     firebase.auth().onAuthStateChanged(function (user) {
       db.collection("postings")
       .get()
       .then(function(querySnapshot) {
           querySnapshot.forEach(function(doc) {
-              // doc.data() is never undefined for query doc snapshots
-              console.log(doc.id, " => ", doc.data());
               
-              let title= doc.data().title;
-              let description = doc.data().description;
-              let category = doc.data().category;
-              let dateposted= doc.data().dateposted.toDate();
-              let likes= doc.data().likes;
-              let userid= doc.data().userid;
-
-
-
-        //      console.log(category , title, description);
+            let title= doc.data().title;
+            let description = doc.data().description;
+            let category = doc.data().category;
+            let dateposted= doc.data().dateposted.toDate();
+            let likes= doc.data().likes;
+            let userid= doc.data().userid;
             let docid = doc.id;
-              createPost(title, description, category, dateposted, likes, userid, docid);
-
-              
-
+            createPost(title, description, category, dateposted, likes, userid, docid);
           });
       })
       .catch(function(error) {
@@ -86,13 +117,14 @@ $(document).ready(function () {
         console.error("Error removing document: ", error);
     });
   })
-
+    
     cate.innerHTML = category;
     paragraph.innerHTML = description;
     head.innerHTML = title;
     like.innerHTML = likes + " ❤";
     button.innerHTML = "Delete"
     date.innerHTML = "Last updated: " + dateposted.toLocaleString();
+    
     sect.appendChild(cate);
     colBox.appendChild(sect);
     colBox.appendChild(head);
@@ -102,8 +134,8 @@ $(document).ready(function () {
     colBox.appendChild(button);
     colBox.appendChild(date);
     col.appendChild(colBox);
-
     box.appendChild(col);
+    console.log("Created i guess?");
 
   }
 
