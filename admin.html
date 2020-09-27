@@ -3,7 +3,7 @@
    <head>
       <meta charset="utf-8">
       <meta content="width=device-width, initial-scale=1.0" name="viewport">
-      <title></title>
+      <title>Admin</title>
       <meta content="" name="descriptison">
       <meta content="" name="keywords">
       <!-- Favicons -->
@@ -33,18 +33,16 @@
       <!-- ======= Header ======= -->
       <header id="header" class="fixed-top">
          <div class="container d-flex align-items-center">
-            <h1 class="logo mr-auto"><a href="index.html">Admin</a></h1>
+            <a href="index.html" class="logo mr-auto"
+            ><img src="assets/img/WTCLogo.png" alt="" class="img-fluid"/></a>
             <h2 id="username">Name</h2>
             <!-- Uncomment below if you prefer to use an image logo -->
             <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
             <nav class="nav-menu d-none d-lg-block">
                <ul>
                   <li class="active"><a href="index.html">Home</a></li>
-                  <li><a href="#about">About</a></li>
-                  <li><a href="#services">Services</a></li>
-                  <li><a href="#portfolio">Portfolio</a></li>
-                  <li><a href="#team">Team</a></li>
-                  <li><a href="#contact">Contact</a></li>
+                  <li><a href="index.html">Log out</a></li>
+
                </ul>
             </nav>
          </div>
@@ -57,13 +55,18 @@
                <h2>Thoughts - Admin</h2>
                <p>Check our Thoughts</p>
             </div>
-            <label for="category">Choose category to display:</label>
-            <button type="button" onclick="getCatePosts(0)">All</button>
-            <button type="button" onclick="getCatePosts(1)" >Health</button>
-            <button type="button" onclick="getCatePosts(2)">Career</button>
-            <button type="button" onclick="getCatePosts(3)">Finance</button>
+            
 
+            <nav class="nav-menu d-none d-lg-block">
+               <label for="category">Choose category to display:</label>
+               <ul>
+                 <li> <a onclick="getCatePosts(0)">All</a></li>
+                 <li><a  onclick="getCatePosts(1)" >Health</a></li>
+                 <li><a onclick="getCatePosts(2)">Career</a></li>
+                 <li><a onclick="getCatePosts(3)">Finance</a></li>
 
+               </ul>
+             </nav>
             </select>  
 
             <div id="thoughts" class="row">

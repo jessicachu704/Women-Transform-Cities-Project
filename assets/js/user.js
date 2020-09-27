@@ -5,7 +5,7 @@ $(document).ready(function () {
   
   function updateUsername() {
     firebase.auth().onAuthStateChanged(function (user) {
-      db.collection("admin").doc(user.uid)
+      db.collection("users").doc(user.uid)
         .onSnapshot(function (snap) {
   
           let username = snap.data().name;
@@ -18,6 +18,10 @@ $(document).ready(function () {
     });
   };
   
+  function toPage(){
+
+    window.location.replace("createPost.html");
+  }
   function getPosts() {
     firebase.auth().onAuthStateChanged(function (user) {
       db.collection("postings")

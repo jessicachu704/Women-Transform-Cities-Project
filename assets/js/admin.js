@@ -90,7 +90,7 @@ $(document).ready(function () {
     let cate =  document.createElement("p");
     let head = document.createElement("h4");
     let paragraph = document.createElement("p");
-    let like = document.createElement("button");
+    let like = document.createElement("p");
     let date = document.createElement("p");
     let br = document.createElement("br");
     let button = document.createElement("button");
@@ -102,11 +102,9 @@ $(document).ready(function () {
     colBox.setAttribute("class", "icon-box");
     sect.setAttribute("class","section-title");
     button.setAttribute("class", "get-started-btn");
-    like.setAttribute("class", "get-started-btn");
-//like button
-    like.addEventListener('click', function () {
-        console.log("I LIKE!"); // need to increment like on db.collection
-  })
+    like.setAttribute("class", "btn");
+
+
 //delete button
     button.addEventListener('click', function () {
       console.log("Hi! doc id: " + docid);
@@ -135,7 +133,7 @@ $(document).ready(function () {
     colBox.appendChild(date);
     col.appendChild(colBox);
     box.appendChild(col);
-    console.log("Created i guess?");
+
 
   }
 

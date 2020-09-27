@@ -3,7 +3,7 @@
    <head>
       <meta charset="utf-8">
       <meta content="width=device-width, initial-scale=1.0" name="viewport">
-      <title></title>
+      <title>Home</title>
       <meta content="" name="descriptison">
       <meta content="" name="keywords">
       <!-- Favicons -->
@@ -33,18 +33,16 @@
       <!-- ======= Header ======= -->
       <header id="header" class="fixed-top">
          <div class="container d-flex align-items-center">
-            <h1 class="logo mr-auto"><a href="index.html">User</a></h1>
+            <a href="index.html" class="logo mr-auto"
+            ><img src="assets/img/WTCLogo.png" alt="" class="img-fluid"/></a>
             <h2 id="username">Name</h2>
-            <!-- Uncomment below if you prefer to use an image logo -->
-            <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-            <nav class="nav-menu d-none d-lg-block">
+   <nav class="nav-menu d-none d-lg-block">
                <ul>
                   <li class="active"><a href="index.html">Home</a></li>
-                  <li><a href="#about">About</a></li>
-                  <li><a href="#services">Services</a></li>
-                  <li><a href="#portfolio">Portfolio</a></li>
-                  <li><a href="#team">Team</a></li>
-                  <li><a href="#contact">Contact</a></li>
+                  <li><a href="user.html">View postings</a></li>
+                  <li><a href="userAccount.html">User account</a></li>
+                  <li><a href="index.html">Log out</a></li>
+
                </ul>
             </nav>
          </div>
@@ -52,27 +50,16 @@
       <!-- End Header -->
       <!-- ======= Thoughts Section ======= -->
       <section id="services" class="services">
-        <a  type="button" onclick ="addPost" class="get-started-btn">Add new post!</a>
-         <div class="container" data-aos="fade-up">
+         <div class="container" >
             <div class="section-title">
-               <h2>Thoughts - User</h2>
-               <p>Check our Thoughts</p>
+               <h2>Thoughts - User</h2> 
+               <p>Check our Thoughts</p> 
+              
             </div>
-            <div id="thoughts" class="row">
-               <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-                  <div class="icon-box">
-                     <div class="section-title">
-                        </br>
-                        <p id="category">Post #1</p>
-                     </div>
-                     <h4 id="subject" >Help students!!</a></h4>
-                     <p id="description">Put more investments in education.</p>
-                     <p id="dateposted">Sept 20, 2020.</p>
-                     <br>
-                     <button class="get-started-btn" id="likes">Likes</button>
-                     <button class="get-started-btn" type="button">Delete</button>
-                  </div>
-               </div>
+            <button style="position: absolute; right: 0;" class="get-started-btn" onclick="toPage()">Add thought</button>
+            <br><br>
+            <div id="thoughts" class="row"></div>
+              
             </div>
          </div>
       </section>

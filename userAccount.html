@@ -56,41 +56,19 @@
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo mr-auto"><a href="index.html">Multi</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-
+      <a href="index.html" class="logo mr-auto"
+      ><img src="assets/img/WTCLogo.png" alt="" class="img-fluid"
+    /></a>
       <nav class="nav-menu d-none d-lg-block">
         <ul>
           <li class="active"><a href="index.html">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#team">Team</a></li>
-          <li class="drop-down"><a href="">Drop Down</a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="drop-down"><a href="#">Deep Drop Down</a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-            </ul>
-          </li>
-          <li><a href="#contact">Contact</a></li>
-
+          <li><a href="user.html">View postings</a></li>
+          <li><a href="userAccount.html">User account</a></li>
+          <li><a href="index.html">Log out</a></li>
         </ul>
       </nav><!-- .nav-menu -->
-
-      <a href="#about" class="get-started-btn">Get Started</a>
-
     </div>
   </header><!-- End Header -->
 
@@ -102,24 +80,41 @@
         </br>
           <p>Account Information</p>
         </div>
-        <div class="row">
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-            <div class="icon-box">
+        <div style="text-align: center">
+          <div   data-aos-delay="100">
+
               <h5 >Email: <span id="email">something@gmail.com</span></h5>
-              <h5>Name: <span id="userName">somebody'sname</span></h5>
+              <h5>Name: <span id="username">somebody'sname</span></h5>
               <br/>
-              <button class="get-started-btn">View My Post</button>
+              <a href="#services2" class="get-started-btn">View My Posts</a>
             </br>
-          </br>
-              <button class="get-started-btn">LOG OUT</button>
-            </div>
-          </div>
+            </br>
+              <button class="get-started-btn" onclick="signout()">Log out</button>
+            </div>     
         </div>
+      </div>
+  
+    </section><!-- End Services Section -->
+    
+    <!-- ======= Thoughts Section ======= -->
+    <section id="services2" class="services">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>My posts</h2>
+        </div>
+
+        <div id="thoughts" class="row">
+        </div>
+
       </div>
     </section><!-- End Services Section -->
 
+
   <div id="preloader"></div>
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+ 
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/jquery/jquery.min.js"></script>
@@ -135,15 +130,15 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/userAccount.js"></script>
+  <script src="assets/js/myPosts.js"></script>
 
   <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="/__/firebase/7.21.1/firebase-app.js"></script>
-
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-
-<!-- Initialize Firebase -->
-<script src="/__/firebase/init.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-firestore.js"></script>
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+  <script src="./firebase.js"> </script>
 
 </body>
 
