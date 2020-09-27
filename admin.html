@@ -57,22 +57,17 @@
                <h2>Thoughts - Admin</h2>
                <p>Check our Thoughts</p>
             </div>
+            <label for="category">Choose category to display:</label>
+            <button type="button" onclick="getCatePosts(0)">All</button>
+            <button type="button" onclick="getCatePosts(1)" >Health</button>
+            <button type="button" onclick="getCatePosts(2)">Career</button>
+            <button type="button" onclick="getCatePosts(3)">Finance</button>
+
+
+            </select>  
+
             <div id="thoughts" class="row">
-               <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-                  <div class="icon-box">
-                     <div class="section-title">
-                        </br>
-                        <p id="category">Post #1</p>
-                     </div>
-                     <h4 id="subject" >Help students!!</a></h4>
-                     <p id="description">Put more investments in education.</p>
-                     <p id="dateposted">Sept 20, 2020.</p>
-                     <br>
-                     <button class="get-started-btn" id="likes">Likes</button>
-                     <button class="get-started-btn" type="button">Delete</button>
-                  </div>
-               </div>
-            </div>
+
          </div>
       </section>
       <!-- End Services Section -->
