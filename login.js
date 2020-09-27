@@ -126,5 +126,7 @@ function admin(){
     };
     // The start method will wait until the DOM is loaded.
     // Inject the login interface into the HTML
+    $('body > *:not(header').hide()
+    document.querySelector('#firebaseui-auth-container').style.display = 'true';;
     ui.start('#firebaseui-auth-container', uiConfig);
 }
