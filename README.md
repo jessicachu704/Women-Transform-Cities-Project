@@ -1,11 +1,15 @@
 # Women Transform Cities Project
 This is a project created for WTC in Vancouver. WTC is an organization that helps make Vancouver a better place for people, especially women.
-</br>
+
 Developed during VanHacks 2020 and made into one of the finalists.
-</br>
+
 The project is hosted at: https://wtcfeature.web.app/
 
 ## Table of Content
+* [General Info](#general-information)
+* [Technologies Used](#technologies-used)
+* [Features](#features)
+* [Project Status](#project-status)
 
 ## General Information
 This is an add-on feature to solve problems on Women Transform Cities website.
@@ -21,14 +25,15 @@ This will eventually also help WTC to get more supporters, since the more people
 * JavaScript
 
 ## Features
-* For general users:
-- Gerenal user signup/login
-- Create/delete a post
-- View other's posts
-* for admin:
-- Admin signup/login
-- Delete posts from anyone
-- View other's posts
+For general users:
+* Gerenal user signup/login
+* Create/delete a post
+* View other's posts
+
+For admin:
+* Admin signup/login
+* Delete posts from anyone
+* View other's posts
 
 ## Status
 The project is: _completed_
